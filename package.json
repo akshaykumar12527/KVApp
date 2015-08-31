@@ -4,9 +4,16 @@
   "description": "KVApp",
   "main": "cloudconvert-server.js",
   "scripts": {
+  "start":"node cloudconvert-server.js"
     "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
   },
-  "repository": "",
+"engines": {
+    "node": "0.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akshaykumar12527/KVApp"
+  },
   "keywords": [
     "node.js",
     "eclipse",
