@@ -15,7 +15,7 @@ var slide_files=[];
 app.set('port', (process.env.PORT || 8000));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({secret: 'ssshhhhh'}));
-/*app.use(multer({ dest: 'public/upload/',
+app.use(multer({ dest: 'public/upload/',
 	 rename: function (fieldname, filename) {
 	    return filename+Date.now();
 	  },
@@ -28,7 +28,7 @@ app.use(session({secret: 'ssshhhhh'}));
 	  file_name=file.name;
 	  done=true;
 	}
-	}));*/
+	}));
 app.use(express.static(__dirname+"/public"));
 app.get('/',function(req,res){
 	console.log(req.url);
