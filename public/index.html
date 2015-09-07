@@ -1,286 +1,268 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-  <title>Testing Module</title>
-  <meta name="author" content="Akshay Kumar">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font CSS (Via CDN) -->
-  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
-
-  <!-- Theme CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
-  <!-- Glyphicons Pro CSS(font) -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/glyphicons-pro/glyphicons-pro.css">
-
-  <!-- Icomoon CSS(font) -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/icomoon/icomoon.css">
-
-  <!-- Iconsweets CSS(font) -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/iconsweets/iconsweets.css">
-
-  <!-- Octicons CSS(font) -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/octicons/octicons.css">
-
-  <!-- Stateface CSS(font) -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/stateface/stateface.css">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/img/favicon.ico">
+<meta charset="ISO-8859-1">
+<title>KVApp | Signup</title>
+<meta content="KV Video Presentation Tool" name="keywords">
+<meta content="KVApp" name="Akshay kumar">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" type="text/css" rel="stylesheet">
+<link href="assets/skin/default_skin/css/theme.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+<link href="assets/img/favicon.ico" rel="shortcut icon">
 </head>
-
-<body class="blank-page">
-
-  
-  <!-- Start: Main -->
-  <div id="main">
-
-    <!-- Start: Header -->
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-branding dark">
-        <a class="navbar-brand" href="dashboard.html">
-          <b>KV</b>App
-        </a>
-        <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
-      </div>
-      
-      <form class="navbar-form navbar-left  navbar-search" role="search">
-        <div class="form-group">
-          <input class="form-control" placeholder="Search..." value="Search..." type="text">
-        </div>
-      </form>
-
-      
-
-    </header>
-<div class="content-wrapper" style="margin-top:75px">
+<body class="external-page boxed-layout sb-l-o sb-r-c">
+<div id="main">
+<header class="navbar navbar-fixed-top bg-info" style="height:100px;padding: 5px;">
+<div class="navbar-branding" style="height:100%;width:100%">
 <div class="row">
-  <div class="col-xs-12 pull-right">
-    <button disabled class="btn btn-primary pull-right" id="preview"><i class="fa fa-eye"></i> Preview</button>
-    </div>
-  </div>
-<div class="row">
-<div class="col-lg-3" style="border: 1px solid;">
-<div class="panel">
- <div class="panel-heading">
-<span class="panel-title">Slides</span>
+<div class="col-md-2">
+<img src="assets/img/logos/KVApp.png" class="logo" height="90px" width="90px"></img>
 </div>
-<div class="panel-body panel-scroller scroller-sm scroller-pn pn scroller scroller-active" style="min-height: 400px;"><div style="height: 199px;" class="scroller-bar"><div style="height: 189px; margin-bottom: 5px; margin-top: 5px;" class="scroller-track"><div style="height: 74.8868px; top: 1px;" class="scroller-handle"></div></div></div><div class="scroller-content">
-<ul class="slides list-group">
-</ul>
- </div></div>
-  </div>
-<!-- <div class="slides-container scroller" style="max-height: 400px;
-overflow: scroll;" >
-
-</div>
--->
-</div>
-<div class="col-lg-6" id="selected_slide" style="border: 1px solid;">
-
-</div>
-<div class="col-lg-3" style="border: 1px solid;">
-<div class="row">
-<div class="col-xs-12">
-<i class="fa fa-lg fa-video-camera " ></i>
-<video src=""  height="300" width="300" ></video>
-</div>
-</div>
-<div class="row" style="margin-top: 25px; margin-bottom: 25px;">
-  <div class="col-xs-12" style="text-align: center;" >
-   <strong style="font-size: 20px;"> <span id="time_span">00:00</span><strong>
-    </strong></strong></div>
-    </div> 
-    <div class="row">
-<div style="text-align: center;" class="col-xs-4">
-<button style="border-radius: 50%; border: 2px solid white; font-size: 30px;" class="btn btn-lg btn-success" id="btn-start-recording"><span class="fa fa-lg fa-microphone"></span></button>
-</div>
-<div style="text-align: center;" class="col-xs-4">
-<button style="border-radius: 50%; border: 2px solid white; font-size: 30px;" disabled class="btn btn-lg btn-success" id="btn-stop-recording"><span class="fa fa-lg fa-microphone-slash"></span></button>
-</div>
-<!-- <div style="text-align: center;" class="col-xs-4 ">
-<button style="border-radius: 50%; border: 2px solid white; font-size: 30px;" class="btn btn-lg btn-success" id="next-slide"><i class="fa fa-lg fa-step-forward"></i></button>
-</div>-->
-</div>
-</div>
-</div>
-</div>
-<div style="display: block;" class="modal fade in" id="recent_slides_modal" tabindex="-1" aria-hidden="false" data-keyboard="false">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add Slides</h4>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-			<div class="col-xs-12 text-center">
-            <div style="border: 2px dashed rgb(187, 187, 187); margin: 15px 11px;" class="knovio-modal-upload-container">
-
-                <div style="position: relative; max-width: 160px; margin: 80px auto; overflow: hidden;" class="upload-slides-btn-wrapper">
-                    <span style="border: 1px solid rgb(0, 145, 255); cursor: pointer; border-radius: 5px; text-align: center; padding: 15px 5px; color: rgb(0, 145, 255); display: block; max-width: 160px; width: 100%; font-size: 16px; line-height: 1;" class="btn btn-default upload-slides-btn">
-                        <span>Upload Slides</span>
-                        <form id="uploadForm" action="upload" method="post" enctype="multipart/form-data">
-                        <input style="position: absolute; top: 0px; right: 0px; margin: 0px; opacity: 0; font-size: 9px; cursor: pointer; color: rgb(255, 255, 255); height: 48px;" id="select_upload_slides" name="select_upload_slides" accept="application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/pdf,application/x-pdf,application/acrobat,applications/vnd.pdf,text/pdf,text/x-pdf, image/png, image/jpeg, image/gif" multiple="" type="file">
-                   		</form>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" id='close'>Close</button>
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-  <div id='preview_modal' class="modal fade" role="dialog">
-   <div class="modal-dialog">
-<div class="modal-content" data-keyboard="false" data-backdrop="static" >
-
-        <div class="row">
-            <div class="modal-header">
-                <div class="col-xs-12">
-                    <h4 class="knovio-modal-header-title">Preview Changes</h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="row pad10">
-            <div class="col-sm-12 text-center">
-                <div class="preview-text-content">A preview of your presentation will open in a new browser window.</div>
-            </div>
-        </div>
-        <div class="row pad10">
-            <div class="col-sm-12">
-                <div class="pull-right preview-footer-wrap">
-                    <button class="btn btn-default btn-cancel preview-cancel"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                    <a class="btn btn-primary launch-preview ml5" href="/preview.html" id='preview_link' target="_blank"><span class="glyphicon glyphicon-play"></span> Launch Preview</a>
-                </div>
-            </div>
-        </div>
-    </div>
-   </div>
-   </div>
-  </div>
-   <!-- End: Main -->
-
-  <!-- BEGIN: PAGE SCRIPTS -->
-
-  <!-- jQuery -->
-  <script src="vendor/jquery/jquery-1.11.1.min.js"></script>
-  <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
-
-  <!-- Theme Javascript -->
-  <script src="assets/js/utility/utility.js"></script>
-<script src="vendor/jquery/jquery.form.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="vendor/RecordRTC.js"></script>
-  <script src="javascript/recording.js"></script>
-  <script src="vendor/jquerysession.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
-	  var i=0;
-	  var prevSlide='';
-	  var prev=-1;
-	  $.session.set('name','Akshay kumar');
-	  $("#recent_slides_modal").modal();
-	  $("#select_upload_slides").change(function()
-			{
-		alert("selected");
-		$("#uploadForm").trigger("submit");
-			});
-	     $('#uploadForm').submit(function() {
-			
-	        $(this).ajaxSubmit({
-
-	            error: function(xhr) {
-	                    status('Error: ' + xhr.status);
-	                    alert('error');
-	            },
-
-	            success: function(response) {
-	            	 $("#recent_slides_modal").fadeOut();           			
-	                      
-	                      for(var i=0;i<response.slides.length;i++){
-	            	var li=document.createElement("li");
-	            	li.innerHTML='<img src="'+response.slides[i]+'" class="img-preview" />';
-	           		//slides=response.slides;
-	            		$(".slides").append(li);	
-	            	
-	            	
-	                      }
-	            }
-	            
-	    });
-	        //Very important line, it disable the page refresh.
-	    return false;
-	    });
-	    $(document).on('click','img',function(){
-	    	 if($(this).attr('src')>prevSlide || $(this).attr('src').length>prevSlide.length)
-	    		 {
-	    		 prev++;
-	    		 var slide={};
-	    		 slide.path=$(this).attr('src');
-	    		 slide.start_time=duration;
-	    		/* if(prev>0)
-	    			 {
-	    			 slides[prev-1].end_time=duration;
-	    			 alert('end time='+slides[prev-1].end_time);
-	    			 }*/
-	    		 slides[prev]=slide;
-	    	 $("#selected_slide").html('<img src="'+$(this).attr("src")+'" class="img-container" />');
-	    	 prevSlide=$(this).attr('src');
-	    	 console.log(duration+' '+slides.length);
-	    	 //alert(prev+"  "+slides[0].path+"  "+slides[0].start_time+"  "+slides[0].end_time);
-	    	 
-	    		 }
-	    	 else{
-	    	 alert($(this).attr('src')+'   '+prevSlide);
-	    	 }
-	    	 
-	     });
-	     /*$("img").click(function(){
-	    	 $("#selected_slide").html('<img src="'+$(this).attr("src")+'" class="img-container" />');
-	     });*/
-	     $('#close').on('click',function(){
-	    	 for(var i=0;i<17;i++){
-	            	var li=document.createElement("li");
-	           	 var path='upload/appt1440838728962/appt1440838728962-'+i+'.jpg';
-	            	li.innerHTML='<img src="'+path+'" class="img-preview" />';
-	           		//slides=response.slides;
-	            		$(".slides").append(li);	
-	            	
-	            	
-	                      }
-	    	
-	     });
-	     $('a').click(function(){
-	    	$('#preview_mpdal').fadeOut(); 
-	     });
-	     $("#next-slide").click(function(){
-	    	 if(i<=slides.lenght)
-	    		 {
-	    	
-	    	 $("#selected_slide").html('<img src="'+slides[i]+'" class="img-container" />');
-	    	 i++;
-	    		 }
-	    	 else
-	    		 {
-	    		 $(this).attr("disable","true");
-	    		 }
-	     });
+<div class="col-md-2">
+ <img src="assets/img/logos/Video-icon.png" class="logo" height="90px" width="90px"></img>
    
-  });
-  </script>
-  <!-- END: PAGE SCRIPTS -->
+</div>
+<div class="col-md-2">
+<img src="assets/img/logos/video-icon_3.png" class="logo" height="90px" width="90px"></img>
+</div>
+<div class="col-md-2">
+ <img src="assets/img/logos/Video-icon.png" class="logo" height="90px" width="90px"></img>
+   
+</div>
+<div class="col-md-2">
+<img src="assets/img/logos/KVApp.png" class="logo" height="90px" width="90px"></img>
+</div>
+<div class="col-md-2">
+ <img src="assets/img/logos/video-icon_3.png" class="logo" height="90px" width="90px"></img>
+   
+</div>
+</div>
+   
+  </div>
+</header>
+<section id="content_wrapper" style="margin: 10%;">
+      <section id="content" class="">
+   <div class="admin-form theme-info mw700" style="margin-top: 3%;width:70%" id="login1">
 
+          <div class="row mb15 table-layout">
+
+            <div class="col-xs-6 va-m pln">
+              <!-- <a href="signup.html" title="Return to Dashboard">
+                <img src="assets/img/logos/logo_white.png" title="AdminDesigns Logo" class="img-responsive w250">
+              </a>-->
+            </div>
+
+            <div class="col-xs-6 text-right va-b pr5">
+              <div class="login-links">
+                <a href="#login" class="login" title="Sign In">Sign In</a>
+                <span class="text-white"> | </span>
+                <a href="#signup"  class="active signup" title="Register">Register</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="panel panel-info mt10 br-n">
+
+            <div class="panel-heading heading-border bg-white">
+              <div class="section row mn">
+                <div class="col-sm-4">
+                  <a href="#" class="button btn-social facebook span-left mr5 btn-block">
+                    <span>
+                      <i class="fa fa-facebook"></i>
+                    </span>Facebook</a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" class="button btn-social twitter span-left mr5 btn-block">
+                    <span>
+                      <i class="fa fa-twitter"></i>
+                    </span>Twitter</a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" class="button btn-social googleplus span-left btn-block">
+                    <span>
+                      <i class="fa fa-google-plus"></i>
+                    </span>Google+</a>
+                </div>
+              </div>
+            </div>
+
+            <form method="post" action="signup" id="account2">
+              <div class="panel-body p25 bg-light">
+                <div class="section-divider mt10 mb40">
+                  <span>Set up your account</span>
+                </div>
+                <!-- .section-divider -->
+
+                <div class="section row">
+                  <div class="col-md-6">
+                    <label for="firstname" class="field prepend-icon">
+                      <input type="text" name="firstname" id="firstname" data-validation="custom" data-validation-regexp="^[a-zA-Z ]{2,30}$" data-validation-error-msg="First Name should be greather than 1 and has alphabets only" class="gui-input" placeholder="First name...">
+                      <label for="firstname" class="field-icon">
+                        <i class="fa fa-user"></i>
+                      </label>
+                    </label>
+                  </div>
+                  <!-- end section -->
+
+                  <div class="col-md-6">
+                    <label for="lastname" class="field prepend-icon">
+                      <input type="text" name="lastname" id="lastname" data-validation="custom" data-validation-regexp="^[a-zA-Z ]{2,30}$" data-validation-error-msg="Last Name should be greather than 1 and has alphabets only"  class="gui-input" placeholder="Last name...">
+                      <label for="lastname" class="field-icon">
+                        <i class="fa fa-user"></i>
+                      </label>
+                    </label>
+                  </div>
+                  <!-- end section -->
+                </div>
+                <!-- end .section row section -->
+
+                <div class="section">
+                  <label for="email" class="field prepend-icon">
+                    <input type="email" name="email" id="email" data-validation="email" data-validation-error-msg="Enter valid email address" class="gui-input" placeholder="Email address">
+                    <label for="email" class="field-icon">
+                      <i class="fa fa-envelope"></i>
+                    </label>
+                  </label>
+                </div>
+                <!-- end section -->
+
+                <div class="section">
+                  <div class="smart-widget sm-right">
+                    <label for="username" class="field prepend-icon">
+                      <input type="text" name="username" id="username" data-validation="length alphanumeric" 
+					 data-validation-length="3-20" 
+		 				data-validation-error-msg="User name has to be an alphanumeric value (3-20 chars)"
+					 class="gui-input" placeholder="Choose your username">
+                      <label for="username" class="field-icon">
+                        <i class="fa fa-user"></i>
+                      </label>
+                    </label>
+                   
+                  </div>
+                  <!-- end .smart-widget section -->
+                </div>
+                <!-- end section -->
+
+                <div class="section">
+                  <label for="password" class="field prepend-icon">
+                    <input type="password" name="password" id="password" data-validation="strength" 
+		 data-validation-strength="2" class="gui-input" placeholder="Create a password">
+                    <label for="password" class="field-icon">
+                      <i class="fa fa-unlock-alt"></i>
+                    </label>
+                  </label>
+                </div>
+                <!-- end section -->
+
+                <div class="section">
+                  <label for="confirmPassword" class="field prepend-icon">
+                    <input type="password" name="confirmPassword" id="confirmPassword" data-validation="confirmation" data-validation-confirm="password" class="gui-input" placeholder="Retype your password">
+                    <label for="confirmPassword" class="field-icon">
+                      <i class="fa fa-lock"></i>
+                    </label>
+                  </label>
+                </div>
+                <!-- end section -->
+
+                <div class="section-divider mv40">
+                  <span>Review the Terms</span>
+                </div>
+                <!-- .section-divider -->
+
+                <div class="section mb15">
+                  <label class="option block">
+                    <input type="checkbox" name="trial" data-validation="required" 
+		 data-validation-error-msg="You have to select for trail">
+                    <span class="checkbox"></span>Sign me up for a
+                    <a href="#" class="theme-link"> 7-day free PRO trial. </a>
+                  </label>
+                  <label class="option block mt15">
+                    <input type="checkbox" name="terms" data-validation="required" 
+		 data-validation-error-msg="You have to agree to our terms">
+                    <span class="checkbox"></span>I agree to the
+                    <a href="#" class="theme-link"> terms of use. </a>
+                  </label>
+                </div>
+                <!-- end section -->
+
+              </div>
+              <!-- end .form-body section -->
+              <div class="panel-footer clearfix">
+        	<button type="button" disabled="true" id='register' class="button btn-info pull-right" style="
+    border: 1px solid;
+    border-radius: 10px;">Create Account</button>
+             </div>
+              <!-- end .form-footer section -->
+            </form>
+          </div>
+        </div>
+    
+      </section>
+      <!-- End: Content -->
+
+    </section>
+</div>
+<script src="vendor/jquery/jquery-1.11.1.min.js"></script>
+<script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+<script src="vendor/jquery/jquery.form-validator.min.js"></script>
+<script src="assets/js/utility/utility.js"></script>
+<script src="assets/js/demo/demo.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+	$('input[name="terms"]').on('change',function(){
+		if($(this).is(":checked") && $('input[name="trial"]').is(":checked") )
+			{
+			$('#register').removeAttr('disabled');
+			}
+		else{
+			$('#register').attr('disabled',true);
+		}
+	});
+	$('input[name="trial"]').on('change',function(){
+		if($(this).is(":checked") && $('input[name="terms"]').is(":checked") )
+			{
+			$('#register').removeAttr('disabled');
+			}
+		else{
+			$('#register').attr('disabled',true);
+		}
+	});
+	$('#register').click(function(){
+		var postData={};
+		postData.username=$('#username').val();
+		postData.name=$('#firstname').val()+' '+$('#lastname').val();
+		postData.email=$('#email').val();
+		postData.password=$('#password').val();
+		
+		alert(postData.email);
+		$.post('register',JSON.stringify(postData),function(data,status){
+			$('.mt10').load(''+data);
+		});
+	});
+});
+$('.login').click(function(){
+	
+	$('.mt10').load('login.html');
+});
+$.validate({
+  modules : 'security',
+  onModulesLoaded : function() {
+    var optionalConfig = {
+      fontSize: '12pt',
+      padding: '4px',
+      bad : 'Very bad',
+      weak : 'Weak',
+      good : 'Good',
+      strong : 'Strong'
+    };
+
+    $('input[name="password"]').displayPasswordStrength(optionalConfig);
+  }
+});
+</script>
 </body>
-
 </html>

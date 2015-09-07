@@ -178,41 +178,55 @@ function serveStatic(response, pathname) {
     	}
 
 
-function insertData(connection,postData,res){
+function insertData(database,postData,userid,res){
 	console.log('insertData');
-	var slides_data = JSON.parse(postData),
-	slides=slides_data['slides'];
-	var video=slides_data['video'];
-	var path=video['path'];
-	var duration=video['duration'],video_id;
-	var id=0;
-	connection.query("insert into video values("+id+","+duration+",'"+path+"')",function(){
-		connection.query("select video_id from video where path='"+path+"'",function(error,row){
-			if(!error)
-				{
-			for(var i=0;i<row.length;i++)
-				{
-				video_id=row[i].video_id;
-				console.log(video_id);
-				}
-			for(var j=0;j<slides.length;j++){
-				var slide_path=slides[j].path,
-				start_time=slides[j].start_time,
-				end_time=slides[j].end_time,
-				slide_id=0;
-				connection.query("insert into slides values("+slide_id+",'"+slide_path+"',"+video_id+","+start_time+","+end_time+")",function(error){
-					console.log('inserted'+j+error);
-				});
-			}
-			res.end(''+video_id);
-				}
-			else
-				{
-				res.end('error');
-				}
-		});
-		
-	});
+	var slides_data = JSON.parse(postData);
+	console.log(slides_data);
+	//var database=JSON.parse((fs.readFileSync("./database/kvapp.json")).toString());
+	var video_id=(database.video.length>0?database.video.length+1:1);
+	var video={"video_id":video_id,"duration":slides_data.video.duration,"path":slides_data.video.path,"userid":userid};
+	database.video.push(video);
+	var slides=slides_data.slides;
+	var slide_id=(database.slides.length>0?database.slides.length+1:1);
+	for(var i=0;i<slides.length;i++){
+		var slide={"slide_id":slide_id,"path":slides[i].path,"video_id":video_id,"start_time":slides[i].start_time,"end_time":slides[i].end_time};
+		database.slides.push(slide);
+		slide_id++;
+	}
+	fs.writeFileSync('./database/kvapp.json',JSON.stringify(database));
+	res.end(''+video_id);
+//	slides=slides_data['slides'];
+//	var video=slides_data['video'];
+//	var path=video['path'];
+//	var duration=video['duration'],video_id;
+//	var id=0;
+//	connection.query("insert into video values("+id+","+duration+",'"+path+"','"+userid+"')",function(){
+//		connection.query("select video_id from video where path='"+path+"'",function(error,row){
+//			if(!error)
+//				{
+//			for(var i=0;i<row.length;i++)
+//				{
+//				video_id=row[i].video_id;
+//				console.log(video_id);
+//				}
+//			for(var j=0;j<slides.length;j++){
+//				var slide_path=slides[j].path,
+//				start_time=slides[j].start_time,
+//				end_time=slides[j].end_time,
+//				slide_id=0;
+//				connection.query("insert into slides values("+slide_id+",'"+slide_path+"',"+video_id+","+start_time+","+end_time+")",function(error){
+//					console.log('inserted'+j+error);
+//				});
+//			}
+//			res.end(''+video_id);
+//				}
+//			else
+//				{
+//				res.end('error');
+//				}
+//		});
+//		
+//	});
 }
 
 exports.home = home;

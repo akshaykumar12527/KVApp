@@ -1,29 +1,32 @@
 {
-  "name": "KVApp",
-  "version": "0.1.0",
-  "description": "KVApp",
-  "main": "cloudconvert-server.js",
+  "name": "node-js-getting-started",
+  "version": "0.1.5",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
   "scripts": {
-  "start":"node cloudconvert-server.js",
-    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+    "start": "node index.js"
   },
-"engines": {
-    "node": "0.12.2"
+  "dependencies": {
+    "express": "4.13.3",
+	"express-session": "latest",
+	"multer": "latest",
+	"body-parser": "latest",
+	"unzip2": "latest",
+	"cloudconvert": "latest",
+	"node-uuid": "latest",
+	"method-override": "latest"
+  },
+  "engines": {
+    "node": "0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akshaykumar12527/KVApp"
+   "url": "https://github.com/akshaykumar12527/KVApp"
   },
   "keywords": [
-    "node.js",
-    "eclipse",
-    "nodeclipse"
+    "node",
+    "heroku",
+    "express"
   ],
-  "author": "Akshay kumar",
-  "license": "MIT",
-  "dependencies": {
-    "express": "~4.10.2",
-    "multer": "~0.1.6"
-  },
-  "readmeFilename": "README.md"
+  "license": "MIT"
 }
